@@ -1,0 +1,30 @@
+{
+  "name": "clemi",
+  "version": "1.0.0",
+  "description": "A simple library that saves time and make your hair curly",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EpicKiwi/Clemi.git"
+  },
+  "keywords": [
+    "webcomponent",
+    "webcomponent",
+    "component"
+  ],
+  "author": "EpicKiwi <me@epickiwi.fr>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EpicKiwi/Clemi/issues"
+  },
+  "homepage": "https://github.com/EpicKiwi/Clemi#readme",
+  "dependencies": {
+    "rxjs": "^6.2.0"
+  }
+}
