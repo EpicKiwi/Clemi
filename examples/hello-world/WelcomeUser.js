@@ -1,4 +1,4 @@
-const clemi = require("../lib/index")
+const clemi = require("../../lib/index")
 
 const Component = clemi.Component
 const template = clemi.template

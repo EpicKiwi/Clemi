@@ -25,6 +25,8 @@
   },
   "homepage": "https://github.com/EpicKiwi/Clemi#readme",
   "dependencies": {
-    "rxjs": "^6.2.0"
+    "kebab-case": "^1.0.0",
+    "rxjs": "^6.2.0",
+    "rxjs-compat": "^6.2.0"
   }
 }
