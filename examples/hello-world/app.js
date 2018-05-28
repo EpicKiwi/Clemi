@@ -4,6 +4,8 @@ const Rx = require("rxjs/Rx")
 
 const welcome = document.getElementById("welcome")
 
+document.getElementById("username").value = welcome.username
+
 Rx.Observable.fromEvent(document.getElementById("username"),"keyup").subscribe((e) => {
     welcome.username = e.target.value
 })
