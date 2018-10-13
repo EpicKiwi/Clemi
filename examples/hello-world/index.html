@@ -27,15 +27,45 @@
             align-items: center;
         }
 
-        hello-world {
-            width: 75%;
+        body > * {
+            margin: 10px;
         }
 
     </style>
 </head>
 <body>
-<hello-world id="modal"></hello-world>
 
-<script src="app.js" ></script>
+<script>
+    const {define,Component} = require("../../lib/index")
+
+    define(class FlatButton extends Component {
+        static get template(){
+            return `
+            <style>
+                button {
+                    padding: 10px;
+                    background-color: #f65c14;
+                    border: none;
+                    border-radius: 3px;
+                    box-shadow: rgba(0,0,0,0.3) 0 3px 10px;
+                    color: white;
+                    text-transform: uppercase;
+                }
+            </style>
+            <button data-on-click="onAwesomeClick" >My flat button</button>
+        `
+        }
+
+        onAwesomeClick(e){
+            console.log("TODO : Do cool stuff");
+        }
+    })
+</script>
+
+<flat-button></flat-button>
+
+<!--<hello-world id="modal"></hello-world>
+
+<script src="app.js" ></script>-->
 </body>
 </html>
