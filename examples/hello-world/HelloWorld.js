@@ -5,11 +5,6 @@ require("./FlatButton")
 
 module.exports = clemi.define(class HelloWorld extends clemi.Component {
 
-    get props(){
-        return {
-        }
-    }
-
     onDocClicked(){
         this.dispatchEvent(new Event("doc"))
     }

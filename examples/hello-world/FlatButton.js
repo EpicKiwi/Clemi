@@ -2,10 +2,6 @@ const clemi = require("../../lib/index")
 
 module.exports = clemi.define(class FlatButton extends clemi.Component {
 
-    get props(){
-        return {}
-    }
-
     static get template(){
         //language=HTML
         return `

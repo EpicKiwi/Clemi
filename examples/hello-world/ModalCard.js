@@ -2,14 +2,14 @@ const clemi = require("../../lib/index")
 
 module.exports = clemi.define(class ModalCard extends clemi.Component {
 
-    get props(){
+    static get props(){
         return {
-            withToolbar: {type:Boolean,callback:this.enableToolbar}
+            withToolbar: {type:Boolean,callback:"enableToolbar"}
         }
     }
 
     enableToolbar(){
-        if(this.withToolbar){
+        if(this.props.withToolbar){
             this.el.toolbar.classList.add("enable")
         } else {
             this.el.toolbar.classList.remove("enable")
