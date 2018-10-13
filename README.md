@@ -35,7 +35,7 @@ module.exports = define(class MyFirstComponent extends Component {
 
 Let's decompose this code...
 
-With `require("cemi")` we import the library and expose the `define` function and `Component` class.
+With `require("clemi")` we import the library and expose the `define` function and `Component` class.
 
 The `define` function is a simple wrapper of the normalized `window.customElements.define` taking a simple class as parameter. This function will define the component based on the class name uncamelized. In this case, the component declared will be `my-first-component`.
 
@@ -278,10 +278,26 @@ Wrapper around the `HTMLElement` class.
 
 * `get observedAttributes():string[]` : The getter defining to the browser the attributes to watch
 
+## To Do
+
+There is some ideas of improvement for the next versions
+
+* [ ] Add `required` parameter for the properties
+* [ ] Add `validation` parameter for the properties
+* [ ] Allow to create custom parsers for properties
+* [ ] Create a Context system like [React's one](https://reactjs.org/docs/context.html)
+
 ## Contributing
 
-You whant to contribute to Clemi ? Awesome !
+You want to contribute to Clemi ? Awesome !
 
-You can contribute by correcting my english mistakes in the Docs, by adding [an issue](https://github.com/EpicKiwi/Clemi/issues) if you found a bug or by creating a [pull request](https://github.com/EpicKiwi/Clemi/pulls).
+You can contribute by correcting english mistakes in the Docs.
+Or by adding [an issue](https://github.com/EpicKiwi/Clemi/issues) if you found a bug.
+Or better, by creating a [pull request](https://github.com/EpicKiwi/Clemi/pulls).
 
-Or you can simply give me your feedback ;)
+Or you can simply give me your feedback and your ideas for the next versions
+
+## Changelog
+
+* 2.0.0 : Major change of all the Component API
+* 1.0 : You don't want to know what's the v1 looks like
