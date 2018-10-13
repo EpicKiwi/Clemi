@@ -1,15 +1,14 @@
-require("./WelcomeUser")
+const {shell} = require("electron")
 
-const Rx = require("rxjs/Rx")
+require("./HelloWorld")
 
-const welcome = document.getElementById("welcome")
+let modal = document.getElementById("modal")
 
-document.getElementById("username").value = welcome.username
-
-Rx.Observable.fromEvent(document.getElementById("username"),"keyup").subscribe((e) => {
-    welcome.username = e.target.value
+modal.addEventListener("doc",(e) => {
+    shell.openExternal("https://www.npmjs.com/package/clemi")
 })
 
-Rx.Observable.fromEvent(document.getElementById("hide-desc"),"click").subscribe((e) => {
-    welcome.hideDescription = e.target.checked
+
+modal.addEventListener("star",(e) => {
+    shell.openExternal("https://github.com/EpicKiwi/Clemi")
 })

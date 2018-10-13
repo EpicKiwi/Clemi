@@ -5,55 +5,37 @@
     <title>Welcome Clemi</title>
     <style>
         * {
-            margin: 0;
-            padding: 0;
             box-sizing: border-box;
+            padding: 0;
+            margin: 0;
             font-family: sans-serif;
+
+            --theme-background: #fff;
+            --theme-dark-background: #ddd;
+            --theme-primary: #f65c14;
+            --theme-on-primary: #f6dfe6;
+            --theme-dark-primary: #a54b14;
         }
 
         body {
-            background: #333333;
+            width: 100vw;
+            height: 100vh;
+
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            flex-direction: column;
-            height: 100vh;
         }
 
-        body > * {
-            width: 50%;
-            margin: 20px 0;
-            color: #343434
+        hello-world {
+            width: 75%;
         }
 
-        h1 {
-            color: #cdcdcd;
-            text-align: center;
-        }
-
-        form, welcome-user {
-            background: #ebebeb;
-            padding: 10px;
-            border-radius: 3px;
-        }
-
-        p:not(:last-child) {
-            margin-bottom: 10px;
-        }
-
-        input[type="text"] {
-            width: 100%;
-            padding: 10px;
-        }
     </style>
 </head>
 <body>
-<h1>Hello world</h1>
-<form>
-    <p><input type="text" placeholder="username" id="username"/></p>
-    <p><label for="hide-desc">Hide description </label><input type="checkbox" id="hide-desc"/></p>
-</form>
-<welcome-user id="welcome" username="Clemi"></welcome-user>
+
+<hello-world id="modal"></hello-world>
 
 <script src="app.js" ></script>
 </body>
