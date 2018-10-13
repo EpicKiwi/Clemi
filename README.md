@@ -299,5 +299,6 @@ Or you can simply give me your feedback and your ideas for the next versions
 
 ## Changelog
 
+* 2.0.1 : Doc improvement
 * 2.0.0 : Major change of all the Component API
 * 1.0 : You don't want to know what's the v1 looks like
