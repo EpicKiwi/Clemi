@@ -1,6 +1,6 @@
 {
   "name": "clemi",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A simple library that saves time and make your hair curly",
   "main": "lib/index.js",
   "directories": {
