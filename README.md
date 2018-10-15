@@ -4,13 +4,13 @@
 
 Clemi is a simple Web Component library.
 It's doesn't provide any Polyfill and currently only work on CommonJS environments (ex Electron).
-The goal of clemi is to provide a simple and time-saving way to define webcomponents. Clemi is inspired by components-based frameworks like VueJS and react.
+The goal of Clemi is to provide a simple and time-saving way to define webcomponents. Clemi is inspired by components-based frameworks like VueJS and react.
 
 With Clemi you can create powerfull components with less code.
 
 ## Installation
 
-Just install Clemi like any other npm package and add it to your dependancies.
+Just install Clemi like any other npm package and add it to your dependencies.
 
 ```bash
 npm install clemi --save
@@ -88,7 +88,7 @@ Now you can see your component with a shadow DOM attached and the content of the
 ![A simple button with "My flat button" written in it](./doc/img/flat-button.png)
 
 
-> If you need the root of the shadow dom in your code it's available below the property `this.root` of the component and it will be `null` if there is no template defined
+> If you need the root of the shadow DOM in your code it's available below the property `this.root` of the component and it will be `null` if there is no template defined.
 
 #### Scoped style
 
@@ -124,7 +124,7 @@ module.exports = define(class FlatButton extends Component {
 
 #### Get a DOM element
 
-In the Clemi philosophy, the id of an element is only used to select an element in the tree to interact with it through your code.
+Regarding the Clemi philosophy, the id of an element is only used to select an element in the tree to interact with it through your code.
 When a component is defined, constructed and the Shadow DOM mounted, Clemi will analyse all the template and find the elements with and `id` attribute.
 The elements will be stored under the `this.el` property with a camelized name of the `id`
 
@@ -152,14 +152,14 @@ module.exports = define(class FlatButton extends Component {
 In this example we redefining the text of the button during the connection with the reference inside the `this.el` property.
 The reference is made during the construction of the component and is available all the time.
 
-Df you're adding dynamically a element with `id` attribute to your template, the element will be added to `this.el`.
+If you're adding dynamically a element with `id` attribute to your template, the element will be added to `this.el`.
 
 > `connectedCallback` is a normalized method executed when the component is created and connected to the DOM. [More info on MDN](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements#Using_the_lifecycle_callbacks)
 > Don't forget to call the super method of `connectedCallback`, it's used to properly call the properties callbacks (see below).
 
 #### Event handling
 
-Clemi alo helps you to handle the events of your component by creating handlers on elements.
+Clemi also helps you to handle the events of your component by creating handlers on elements.
 
 On any HTML element of your template you can add the `data-on-*` attribute to associate a local method to an event.
 
@@ -191,7 +191,7 @@ Finally, if you're adding dynamically a element with `data-on-*` attribute to yo
  
 ### Properties
 
-Clemi allow you to define easily the properties of your component liked to the associated attribute.
+Clemi allows you to define easily the properties of your component linked to the associated attribute.
 
 First of all you need to define the properties of your component inside a *static getter* called `props` like so :
 
@@ -223,7 +223,7 @@ Each property definition can have the following properties :
 * `callback` : The name of a local method to call when the property change (default : no callback)
 * `default` : The default value of the property
 
-The type of tha property can be the following and define the parsing method of the attribute :
+The type of the property can be the following and define the parsing method of the attribute :
 
 * `String` : The default, no parsing
 * `Number` : Parsed as float
@@ -231,7 +231,7 @@ The type of tha property can be the following and define the parsing method of t
 * `Object` or `Array` : Serialized as Json and parsed as Json
 
 Anywhere in your component code you can access to the value of the properties through the `this.props` property.
-Celmi define a getter and a setter inside `this.props` for each property you're defining.
+Clemi defines a getter and a setter inside `this.props` for each property you're defining.
 The getter will parse the attribute value and the setter will serialize and set the new value of the attribute.
 
 > **WARNING** using the setter of a property change the value and call the callback associated to the property (see below)
@@ -239,7 +239,7 @@ The getter will parse the attribute value and the setter will serialize and set 
 When the attribute value change, the callback associated to the property (if it's defined) is called with two parameters.
 The old value of the attribute and the new value. 
 
-> These two values are not parsed so prefer use `this.props` instead to get the current value of the property.
+> These two values are not parsed so you should use `this.props` instead to get the current value of the property.
 
 ## API reference
 
@@ -257,7 +257,7 @@ Wrapper around the `HTMLElement` class.
 #### Properties
 
 * `el` : The property containing all the HTML elements of the template with an attribute `id`
-* `root` : The property containing the root of the shadow dom if a template if defined (`null` otherwise)
+* `root` : The property containing the root of the shadow DOM if a template if defined (`null` otherwise)
 * `props` : The property containing the value of each defined properties
 
 #### Static methods
