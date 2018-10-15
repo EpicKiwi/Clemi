@@ -278,15 +278,6 @@ Wrapper around the `HTMLElement` class.
 
 * `get observedAttributes():string[]` : The getter defining to the browser the attributes to watch
 
-## To Do
-
-There is some ideas of improvement for the next versions
-
-* [ ] Add `required` parameter for the properties
-* [ ] Add `validation` parameter for the properties
-* [ ] Allow to create custom parsers for properties
-* [ ] Create a Context system like [React's one](https://reactjs.org/docs/context.html)
-
 ## Contributing
 
 You want to contribute to Clemi ? Awesome !
@@ -299,6 +290,6 @@ Or you can simply give me your feedback and your ideas for the next versions
 
 ## Changelog
 
-* 2.0.1 : Doc improvement
+* 2.0.1-3 : Doc improvement
 * 2.0.0 : Major change of all the Component API
 * 1.0 : You don't want to know what's the v1 looks like
