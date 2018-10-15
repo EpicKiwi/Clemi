@@ -1,1 +1,2 @@
 require("./ModalCard")
+require("./ThemeSwitch")

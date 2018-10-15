@@ -19,7 +19,6 @@ module.exports = clemi.define(class ModalCard extends clemi.Component {
     connectedCallback(){
         super.connectedCallback()
         this.context.theme = "light"
-        console.log(`My new theme : ${this.context.theme}`)
     }
 
     static get template(){
