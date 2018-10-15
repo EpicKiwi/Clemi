@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome Clemi</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            font-family: sans-serif;
+
+            --theme-background: #fff;
+            --theme-dark-background: #ddd;
+            --theme-primary: #f65c14;
+            --theme-on-primary: #f6dfe6;
+            --theme-dark-primary: #a54b14;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        modal-card {
+            min-width: 400px;
+            width: 40%;
+        }
+
+    </style>
+</head>
+<body>
+
+<modal-card>
+    <h1 slot="title">Themable box</h1>
+    <p>This is a demo of the context system</p>
+    <p>The root element provide a value in the context accessible by the components that requires it.</p>
+</modal-card>
+
+<script src="app.js" ></script>
+</body>
+</html>
