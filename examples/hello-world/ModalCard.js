@@ -1,10 +1,10 @@
-const clemi = require("../../lib/index")
+const {define,Component,types} = require("../../lib/index")
 
-module.exports = clemi.define(class ModalCard extends clemi.Component {
+module.exports = define(class ModalCard extends Component {
 
     static get props(){
         return {
-            withToolbar: {type:Boolean,callback:"enableToolbar"}
+            withToolbar: new types.boolean({callback:"enableToolbar"})
         }
     }
 

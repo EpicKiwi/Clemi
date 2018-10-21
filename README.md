@@ -192,18 +192,20 @@ Finally, if you're adding dynamically a element with `data-on-*` attribute to yo
 ### Properties
 
 Clemi allows you to define easily the properties of your component linked to the associated attribute.
+Clemi uses Parsers to parse the property content, a String, to the desired data format.
+Parseres are available under `types` export of clemi.
 
 First of all you need to define the properties of your component inside a *static getter* called `props` like so :
 
 ```javascript
-const {define,Component} = require("clemi")
+const {define,Component,types} = require("clemi")
 
 module.exports = define(class FlatButton extends Component {
     
     static get props(){
         return {
-            myColor: {type:String,callback:'onColorChanged'},
-            largeButton: {type:Boolean,callback:'onLargeChanged'}
+            myColor: new types.string({callback:'onColorChanged'}),
+            largeButton: new types.boolean({callback:'onLargeChanged'})
         }
     }
     
@@ -216,19 +218,18 @@ module.exports = define(class FlatButton extends Component {
 <flat-button my-color="#ddd" large-button></flat-button>
 ```
 
-The result of this getter is an object with a property per key.
-Each property definition can have the following properties :
+The result of this getter is a parser with a property per key.
+Each parser definition can have, at least, the following properties :
 
-* `type` : The type of the property (default:`String`)
 * `callback` : The name of a local method to call when the property change (default : no callback)
 * `default` : The default value of the property
 
-The type of the property can be the following and define the parsing method of the attribute :
+The different parsers available are :
 
-* `String` : The default, no parsing
-* `Number` : Parsed as float
-* `Boolean` : `true` if the attribute is present, `false` otherwise or if the attribute value is exactly `"false"`
-* `Object` or `Array` : Serialized as Json and parsed as Json
+* `string` : The default, no parsing
+* `number` : Parsed as float
+* `boolean` : `true` if the attribute is present, `false` otherwise or if the attribute value is exactly `"false"`
+* `object` : Serialized as Json and parsed as Json
 
 Anywhere in your component code you can access to the value of the properties through the `this.props` property.
 Clemi defines a getter and a setter inside `this.props` for each property you're defining.
@@ -240,6 +241,36 @@ When the attribute value change, the callback associated to the property (if it'
 The old value of the attribute and the new value. 
 
 > These two values are not parsed so you should use `this.props` instead to get the current value of the property.
+
+#### Custom parser
+
+You can create a custom parser that extends an existing one and use it to parse the attributes of your component.
+
+```javascript
+const {types} = require("clemi")
+
+class UnicornParser extends types.string {
+    
+    static get default(){
+        return {type:'unicorn',color:'rainbow'}
+    }
+    
+    toValue(input){
+        return {type:'unicorn',color: input}
+    }
+    
+    fromValue(input){
+        return input.color
+    }
+    
+}
+```
+
+In this example We're defining a custom parser parsing the value of the attribute as the color of a unicorn.
+
+First we're defining a *static getter* `default` representing the default value if this default value is not defined in the options when you create the property in your component.
+
+Next, we're defining the functions `toValue` and `fromValue` used to convert the value when the value is parser (`toValue`) and when the value is stringifyed (`fromValue`).
 
 ## API reference
 
@@ -278,6 +309,21 @@ Wrapper around the `HTMLElement` class.
 
 * `get observedAttributes():string[]` : The getter defining to the browser the attributes to watch
 
+### `StringParser` and children
+
+The main parser of the Clemi properties.
+
+#### Overwritable static properties
+
+* `get defaultValue():any` : The default value if the `default` option isn't set
+
+#### Overwritable methods
+
+* `toValue(input:any):string` : Convert the input into a string value to put in the corresponding attribute
+* `fromValue(input:string):any` : Convert the input from the attribute into the javascript value
+* `fromAttribute(element:HTMLElement,attributeName:string)` : Get the value from the element attributes and return the javascript value
+* `toAttribute(element:HTMLElement,attributeName:string,value:any)` : Convert and put the value on the element's attributes
+
 ## Contributing
 
 You want to contribute to Clemi ? Awesome !
@@ -290,6 +336,7 @@ Or you can simply give me your feedback and your ideas for the next versions
 
 ## Changelog
 
+* 2.1 : Added parsers and custom parsers
 * 2.0.1-3 : Doc improvement
 * 2.0.0 : Major change of all the Component API
 * 1.0 : You don't want to know what's the v1 looks like
