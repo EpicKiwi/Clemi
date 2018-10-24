@@ -319,10 +319,8 @@ The main parser of the Clemi properties.
 
 #### Overwritable methods
 
-* `toValue(input:any):string` : Convert the input into a string value to put in the corresponding attribute
-* `fromValue(input:string):any` : Convert the input from the attribute into the javascript value
-* `fromAttribute(element:HTMLElement,attributeName:string)` : Get the value from the element attributes and return the javascript value
-* `toAttribute(element:HTMLElement,attributeName:string,value:any)` : Convert and put the value on the element's attributes
+* `toValue(input:any):string` : Convert the input into a string value to put in the corresponding attribute. Input will be null if the attribute is not present (Empty string if the argument id present but with empty content).
+* `fromValue(input:string):any` : Convert the input from the attribute into the javascript value. Return `null` or `undefined` to remove the argument.
 
 ## Contributing
 
@@ -336,6 +334,7 @@ Or you can simply give me your feedback and your ideas for the next versions
 
 ## Changelog
 
+* 2.2 : Removed `fromAttribute` and `toAttribute` from parsers
 * 2.1 : Added parsers and custom parsers
 * 2.0.1-3 : Doc improvement
 * 2.0.0 : Major change of all the Component API
