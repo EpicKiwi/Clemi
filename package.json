@@ -1,6 +1,6 @@
 {
   "name": "clemi",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "A simple Web Component helper library",
   "main": "lib/index.js",
   "directories": {
