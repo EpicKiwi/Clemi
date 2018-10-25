@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome Clemi</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            font-family: sans-serif;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .elements-container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: 360px;
+        }
+
+        .elements-container > * {
+            margin: 10px;
+        }
+
+        .form-field {
+            margin-bottom: 20px;
+            color: #2b2b2b;
+        }
+
+        .form-field > * {
+            display: block;
+            width: 100%;
+        }
+
+        .form-field > input {
+            margin-top: 5px;
+            padding: 5px;
+        }
+
+        .form-field > label {
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="elements-container">
+    <physical-element name="Fer" atomic-number="26" ></physical-element>
+    <physical-element name="Aluminium" atomic-number="13" ></physical-element>
+    <physical-element name="Silicium" atomic-number="14" ></physical-element>
+    <physical-element name="Calcium" atomic-number="20" ></physical-element>
+    <physical-element name="Baryum" atomic-number="56" ></physical-element>
+    <physical-element name="Radium" atomic-number="88" ></physical-element>
+    <physical-element name="Titanium" atomic-number="22" ></physical-element>
+    <physical-element name="Gallium" atomic-number="31" ></physical-element>
+    <physical-element class="intermediate" id="custom" ></physical-element>
+</div>
+
+<form>
+    <div class="form-field">
+        <label for="form-name" >Name</label>
+        <input type="text" id="form-name"/>
+    </div>
+    <div class="form-field">
+        <label for="form-atomic">Atomic number</label>
+        <input type="number" id="form-atomic"/>
+    </div>
+</form>
+
+<script src="app.js" ></script>
+</body>
+</html>
