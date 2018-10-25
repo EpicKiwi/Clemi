@@ -9,7 +9,7 @@ module.exports = define(class ModalCard extends Component {
     }
 
     enableToolbar(){
-        if(this.props.withToolbar){
+        if(this.withToolbar){
             this.el.toolbar.classList.add("enable")
         } else {
             this.el.toolbar.classList.remove("enable")

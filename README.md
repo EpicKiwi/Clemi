@@ -231,11 +231,11 @@ The different parsers available are :
 * `boolean` : `true` if the attribute is present, `false` otherwise or if the attribute value is exactly `"false"`
 * `object` : Serialized as Json and parsed as Json
 
-Anywhere in your component code you can access to the value of the properties through the `this.props` property.
-Clemi defines a getter and a setter inside `this.props` for each property you're defining.
+Anywhere in your component code you can access to the value of the properties the getter defined on the instance itself.
+Clemi defines a getter and a setter on the instance for each property you're defining.
 The getter will parse the attribute value and the setter will serialize and set the new value of the attribute.
 
-> **WARNING** using the setter of a property change the value and call the callback associated to the property (see below)
+> **WARNING** using the setter of a property change the value and call the callback associated to the property (see below) if you change the value in the callback, it can produce an infinite loop.
 
 When the attribute value change, the callback associated to the property (if it's defined) is called with two parameters.
 The old value of the attribute and the new value. 
@@ -334,7 +334,10 @@ Or you can simply give me your feedback and your ideas for the next versions
 
 ## Changelog
 
-* 2.2 : Removed `fromAttribute` and `toAttribute` from parsers
+* 2.2 
+    * Removed `fromAttribute` and `toAttribute` from parsers
+    * Moved `this.props` object to root instance.
+    * New example `elements`
 * 2.1 : Added parsers and custom parsers
 * 2.0.1-3 : Doc improvement
 * 2.0.0 : Major change of all the Component API
