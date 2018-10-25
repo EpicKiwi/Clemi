@@ -334,6 +334,7 @@ Or you can simply give me your feedback and your ideas for the next versions
 
 ## Changelog
 
+* 2.2.1 : Hotfix form property bug
 * 2.2 
     * Removed `fromAttribute` and `toAttribute` from parsers
     * Moved `this.props` object to root instance.
