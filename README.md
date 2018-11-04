@@ -231,6 +231,26 @@ The different parsers available are :
 * `boolean` : `true` if the attribute is present, `false` otherwise or if the attribute value is exactly `"false"`
 * `object` : Serialized as Json and parsed as Json
 
+If you don't want to use Parsers directly you can simply pass a plain object and specify the `type` property with a supported built'in type. This property will define what parser will be used.
+
+The type of the property can be the following :
+
+* `String` : Equivalent to the `string` parser
+* `Number` : Equivalent to the `number` parser
+* `Boolean` : Equivalent for the `boolean` parser
+* `Object` or `Array` : Equivalent for the `object` parser
+
+Now your props definition can look like this :
+
+```javascript
+static get props(){
+    return {
+    myColor: {type: String, callback:'onColorChanged'},
+    largeButton: {type: Number, callback:'onLargeChanged'}
+    }
+}
+```
+
 Anywhere in your component code you can access to the value of the properties the getter defined on the instance itself.
 Clemi defines a getter and a setter on the instance for each property you're defining.
 The getter will parse the attribute value and the setter will serialize and set the new value of the attribute.
@@ -334,6 +354,7 @@ Or you can simply give me your feedback and your ideas for the next versions
 
 ## Changelog
 
+* 2.2.2 : Add built-in types
 * 2.2.1 : Hotfix form property bug
 * 2.2 
     * Removed `fromAttribute` and `toAttribute` from parsers

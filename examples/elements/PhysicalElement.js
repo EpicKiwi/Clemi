@@ -4,8 +4,8 @@ module.exports = define(class PhysicalElement extends Component {
 
     static get props(){
         return {
-            name: new types.string({callback:"renderName"}),
-            atomicNumber: new types.number({callback: "renderAtomic", default: null})
+            name: {type: String, callback:"renderName"},
+            atomicNumber: {type: Number, callback: "renderAtomic", default: null}
         }
     }
 
