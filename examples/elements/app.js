@@ -1,4 +1,5 @@
-require("./PhysicalElement")
+let PhysicalElement = require("./PhysicalElement")
+let ConnectedPhysicalElement = require("./ConnectedPhysicalElement")
 
 let element = document.getElementById("custom");
 let formName = document.getElementById("form-name");
@@ -8,3 +9,5 @@ formName.addEventListener("keyup",() => element.name = formName.value);
 
 formAtomic.addEventListener("keyup",() => element.atomicNumber = formAtomic.value);
 formAtomic.addEventListener("change",() => element.atomicNumber = formAtomic.value);
+
+let connect = require("../../lib/index").connect
