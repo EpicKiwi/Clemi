@@ -1,3 +1,5 @@
+![Logo](./doc/img/logo.png)
+
 # Clemi
 
 > A simple Web Component helper library
