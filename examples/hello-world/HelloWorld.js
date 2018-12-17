@@ -1,21 +1,21 @@
-const clemi = require("../../lib/index")
+const clemi = require("../../lib/index");
 
-require("./ModalCard")
-require("./FlatButton")
+require("./ModalCard");
+require("./FlatButton");
 
-module.exports = clemi.define(class HelloWorld extends clemi.Component {
-
-    onDocClicked(){
-        this.dispatchEvent(new Event("doc"))
+module.exports = clemi.define(
+  class HelloWorld extends clemi.Component {
+    onDocClicked() {
+      this.dispatchEvent(new Event("doc"));
     }
 
-    onStarClicked(){
-        this.dispatchEvent(new Event("star"))
+    onStarClicked() {
+      this.dispatchEvent(new Event("star"));
     }
 
-    static get template(){
-        //language=HTML
-        return `
+    static get template() {
+      //language=HTML
+      return clemi.html`
             <style>
                 * {
                     box-sizing: border-box;
@@ -52,6 +52,7 @@ module.exports = clemi.define(class HelloWorld extends clemi.Component {
                         data-on-click="onStarClicked"
                 >Star</flat-button>
             
-            </modal-card>`
+            </modal-card>`;
     }
-});
+  }
+);

@@ -1,10 +1,10 @@
-const clemi = require("../../lib/index")
+const clemi = require("../../lib/index");
 
-module.exports = clemi.define(class FlatButton extends clemi.Component {
-
-    static get template(){
-        //language=HTML
-        return `
+module.exports = clemi.define(
+  class FlatButton extends clemi.Component {
+    static get template() {
+      //language=HTML
+      return clemi.html`
             <style>
                 .button {
                     background: var(--theme-dark-background);
@@ -33,7 +33,7 @@ module.exports = clemi.define(class FlatButton extends clemi.Component {
                 
             </style>
             <button class="button" ><slot></slot></button>
-        `
+        `;
     }
-
-})
+  }
+);
