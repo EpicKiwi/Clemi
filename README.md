@@ -1,3 +1,5 @@
+![Logo](./doc/img/logo.png)
+
 # Clemi
 
 > A simple Web Component helper library
@@ -346,6 +348,7 @@ Or you can simply give me your feedback and your ideas for the next versions
 
 ## Changelog
 
+- 2.3.0 : Add `html` tagget template
 - 2.2.2 : Add built-in types
 - 2.2.1 : Hotfix form property bug
 - 2.2
